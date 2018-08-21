@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import HelloMessage from'./official website/Hello.js'
-import Timing from './official website/Timing';
+import HelloMessage from './official website/Hello';
 
 class App extends Component {
   render() {
@@ -15,8 +14,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <HelloMessage />
-        <Timing/>
+        <HelloMessage/>
       </div>
     );
   }

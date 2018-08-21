@@ -2,10 +2,8 @@ import React from 'react';
 
 class HelloMessage extends React.Component{
   render(){
-    return(
-      <div>
-        <h2>Hellow World</h2>
-      </div>
+    return React.createElement(
+      "H1",null,"Hello Space"
     );
   }
 }
