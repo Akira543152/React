@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import HelloMessage from './official website/Hello';
 
 class App extends Component {
   render() {
