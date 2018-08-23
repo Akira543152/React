@@ -16,7 +16,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <MyHead level="1"/>
-        <MyHead level="2"/>
+        <MyHead level="2" color="blue"/>
         <MyHead level="3"/>
       </div>
     );
