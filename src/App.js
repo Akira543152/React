@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
 // import HelloMessage from './official website/Hello';
 import MyHead from './official website/Hello';
+=======
+>>>>>>> 37019a2e1cb8778519f68218049f410a6cbf6b39
 
 class App extends Component {
   render() {
