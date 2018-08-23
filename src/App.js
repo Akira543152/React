@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+// import HelloMessage from './official website/Hello';
+import MyHead from './official website/Hello';
 
 class App extends Component {
   render() {
@@ -13,7 +15,9 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <HelloMessage/>
+        <MyHead level="1"/>
+        <MyHead level="2"/>
+        <MyHead level="3"/>
       </div>
     );
   }
