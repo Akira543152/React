@@ -31,7 +31,7 @@
 						若狀態為【開】，在 className 中加入 switch-on，產生【開】的介面
 						若狀態為【關】，在 className 只保留 switch，產生【關】的介面
 				*/
-				return <div className={"switch"+(this.state.on?" switch-on":"")} onClick={this.update.bind(this)}>
+				return <div className={"switch"+(this.state.on?"switch-on":"")} onClick={this.update.bind(this)}>
 					<Button/>
 				</div>;
 			}
@@ -52,4 +52,4 @@
 	<hr/>
 	<div id="switch-2"></div>
 </body>
-</html>1912
+</html>

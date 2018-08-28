@@ -28,7 +28,7 @@ class Cell extends React.Component{
   }
 }
 // 建立遊戲盤組件
-class Board extends React.Component{
+class Board1 extends React.Component{
   constructor(props){
     super(props);
     /*
@@ -91,7 +91,6 @@ class Board extends React.Component{
       6 7 8
     */
     // 偵測水平方向的三條線是否有相同的標記
-    let index;
     for(let y=0;y<3;y++){
       if(marks[y*3]!==-1&&marks[y*3]===marks[y*3+1]&&marks[y*3+1]===marks[y*3+2]){
         return {side:marks[y*3], startIndex:y*3, endIndex:y*3+2};
@@ -114,4 +113,4 @@ class Board extends React.Component{
   }
 }
 
-export default Board;
+export default Board1;
