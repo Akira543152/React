@@ -11,12 +11,13 @@ class Board extends React.Component {
     };
     //this.baseState = this.state;
   }
+
   render() {
     let cells = [];
     for(let i = 0; i < this.state.marks.length; i++) {
       cells.push(<Cell index = {i} update = {this.updateMark.bind(this)} mark = {this.state.marks[i]}/>)
     }
-    //sconsole.log(cells);
+    //console.log(cells);
 
     if(this.state.winner !== null) {
       cells.push(<Line
@@ -26,7 +27,9 @@ class Board extends React.Component {
     return(
       <div className = "board">
         {cells}
-        <button onClick = {this.reset.bind(this)}>reset</button>
+        <button 
+          onClick={this.reset.bind(this)}
+        >reset</button>
       </div>
     );
   }
