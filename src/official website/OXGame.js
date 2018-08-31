@@ -1,6 +1,38 @@
 import React from 'react';
 import '../App.css';
 
+class Cell extends React.Component {
+  render() {
+    let text = "";
+    if(this.props.mark === 0) {
+      text = "O";
+    }else if(this.props.mark === 1) {
+      text = "X";
+    }else if(this.props.mark===-1) {
+      text = "";
+    }
+    return(
+      <div className = "cell" onClick = {this.Click.bind(this)}>
+        {text}
+      </div>
+    );
+  }
+  Click() {
+    this.props.update(this.props.index);
+  }
+}
+class Line extends React.Component {
+  //根據贏家資訊：startIndex & endIndex，把線條svg標籤畫在畫面上
+  render() {
+    let startX = this.props.startIndex %3;
+    let startY = Math.floor(this.props.startIndex /3);
+    let endX = this.props.endIndex %3;
+    let endY = Math.floor(this.props.endIndex /3);
+    return <svg className="line"><line x1={startX*100+50} y1={startY*100+50} x2={endX*100+50} y2={endY*100+50} stroke="red" strokeWidth="5" /></svg>
+  }
+}
+
+/*---- main ---- */
 class Board extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +59,7 @@ class Board extends React.Component {
     return(
       <div className = "board">
         {cells}
-        <button 
+        <button
           onClick={this.reset.bind(this)}
         >reset</button>
       </div>
@@ -84,35 +116,5 @@ class Board extends React.Component {
   }
 }
 
-class Cell extends React.Component {
-  render() {
-    let text = "";
-    if(this.props.mark === 0) {
-      text = "O";
-    }else if(this.props.mark === 1) {
-      text = "X";
-    }else if(this.props.mark===-1) {
-      text = "";
-    }
-    return(
-      <div className = "cell" onClick = {this.Click.bind(this)}>
-        {text}
-      </div>
-    );
-  }
-  Click() {
-    this.props.update(this.props.index);
-  }
-}
-class Line extends React.Component {
-  //根據贏家資訊：startIndex & endIndex，把線條svg標籤畫在畫面上
-  render() {
-    let startX = this.props.startIndex %3;
-    let startY = Math.floor(this.props.startIndex /3);
-    let endX = this.props.endIndex %3;
-    let endY = Math.floor(this.props.endIndex /3);
-    return <svg className="line"><line x1={startX*100+50} y1={startY*100+50} x2={endX*100+50} y2={endY*100+50} stroke="red" strokeWidth="5" /></svg>
-  }
-}
 
 export default Board;
