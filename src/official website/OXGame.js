@@ -44,6 +44,10 @@ class Board extends React.Component {
     //this.baseState = this.state;
   }
 
+  componentDidMount() {
+    console.log('componentDidMount')
+  }
+
   render() {
     let cells = [];
     for(let i = 0; i < this.state.marks.length; i++) {
@@ -72,6 +76,17 @@ class Board extends React.Component {
       marks: [-1,-1,-1,-1,-1,-1,-1,-1,-1],
       winner: null,
     });
+
+    this.state.circle = 0;
+    this.state.marks = [-1,-1,-1,-1,-1,-1,-1,-1,-1];
+    this.state.winner = null;
+    
+    this.state = {
+      ...this.state,
+      circle: 0,
+      marks: [-1,-1,-1,-1,-1,-1,-1,-1,-1],
+      winner: null,
+    };
   }
 
   updateMark(index) {
